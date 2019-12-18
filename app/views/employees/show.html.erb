@@ -1,0 +1,7 @@
+
+Name: <%= @employee.first_name %> <%= @employee.last_name%><br>
+Alias: <%= @employee.alias%><br>
+Title: <%= @employee.title%><br>
+Office: <%= @employee.office%><br>
+Dog: <%= @employee.dog.name%><br>
+<%= image_tag(@employee.img_url) if @employee.img_url %>
