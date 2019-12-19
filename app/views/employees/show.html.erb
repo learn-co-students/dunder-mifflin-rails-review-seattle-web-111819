@@ -1,0 +1,20 @@
+<h1>Employee Information</h1>
+<img src= <%= @employee.img_url %> width="350">
+
+<h3>Name:</h3>
+<p><%= @employee.first_name + " " + @employee.last_name %></p>
+
+<h3>Alias:</h3>
+<p><%= @employee.alias %></p>
+
+<h3>Title:</h3>
+<p><%= @employee.title %></p>
+
+<h3>Office:</h3>
+<p><%= @employee.office %></p>
+
+<h3>Dogs:</h3>
+<p><%= @employee.dog.name %></p>
+
+<p><%= link_to "DESTROY", employee_path(@employee), method: :delete %></p>
+<p><%= link_to "EDIT", edit_employee_path(@employee) %></p>
