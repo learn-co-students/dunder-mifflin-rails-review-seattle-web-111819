@@ -1,5 +1,7 @@
 Employee.destroy_all
 Dog.destroy_all
+Employee.reset_pk_sequence
+Dog.reset_pk_sequence
 
 5.times do
   Dog.create(name: Faker::Dog.name, breed: Faker::Dog.breed, age: Faker::Dog.age)
