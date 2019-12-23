@@ -32,7 +32,7 @@ class EmployeesController < ApplicationController
         # find_employee  #find employee by id
     
         if @employee.update(employee_params)
-          redirect_to employee_path   #goes to the employee's page
+          redirect_to @employee      #employee_path   --> goes to the employee's page
         else
           flash[:message] = @employee.errors.full_messages
           render :edit

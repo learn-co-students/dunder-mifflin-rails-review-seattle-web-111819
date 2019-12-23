@@ -33,7 +33,7 @@ class DogsController < ApplicationController
     # find_dog  #find dog by id
 
     if @dog.update(dog_params)
-      redirect_to dog_path
+      redirect_to @dog
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class DogsController < ApplicationController
   def destroy
     # find_dog
     @dog.destroy
-    redirect_to dogs_path
+    redirect_to dog_path
   end
 
   private
