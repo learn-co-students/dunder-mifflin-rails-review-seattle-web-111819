@@ -1,4 +1,6 @@
 class DogsController < ApplicationController
+  before_action :find_dog, only: [:show, :edit, :update, :destroy]
+
   def index
     @dogs = Dog.all
     # @sorted_dogs= Dog.sorted_dogs.reverse!
@@ -10,7 +12,7 @@ class DogsController < ApplicationController
   end
 
   def show
-    find_dog
+    # find_dog
   end
 
   def create
@@ -24,11 +26,11 @@ class DogsController < ApplicationController
   end
 
   def edit
-    find_dog
+    # find_dog
   end
   
   def update
-    find_dog  #find dog by id
+    # find_dog  #find dog by id
 
     if @dog.update(dog_params)
       redirect_to dog_path
@@ -38,8 +40,7 @@ class DogsController < ApplicationController
   end
 
   def destroy
-    find_dog
-
+    # find_dog
     @dog.destroy
     redirect_to dogs_path
   end
