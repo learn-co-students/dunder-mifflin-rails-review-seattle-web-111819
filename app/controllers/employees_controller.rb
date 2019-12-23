@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  before_action :find_employee, only: [:show, :edit, :update, :destroy]
+  
     def index
         @employees = Employee.all
       end
@@ -8,38 +10,39 @@ class EmployeesController < ApplicationController
       end
     
       def show
-        find_employee
+        # find_employee
       end
     
       def create
         @employee = Employee.new(employee_params)
     
         if @employee.save
-          redirect_to employees_path
+          redirect_to employees_path  #goes to index page
         else
+          flash[:message] = @employee.errors.full_messages
           render :new
         end
       end
     
       def edit
-        find_employee
+        # find_employee
       end
       
       def update
-        find_employee  #find employee by id
+        # find_employee  #find employee by id
     
         if @employee.update(employee_params)
-          redirect_to employee_path
+          redirect_to employee_path   #goes to the employee's page
         else
+          flash[:message] = @employee.errors.full_messages
           render :edit
         end
       end
     
       def destroy
-        find_employee
-    
+        # find_employee
         @employee.destroy
-        redirect_to employees_path
+        redirect_to employees_path  #goes to index page
       end
     
       private

@@ -1,53 +1,26 @@
 <h1>Create New Employee</h1>
-<%= form_for @employee, url: employees_path do |f| %>
-<% if @employee.errors.any? %>
-    <div id="error_explanation">
-        <h2> Please check and make sure all fields are filled out correctly. </h2>
- 
-        <ul>
-        <% @employee.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
-<% end %>
-
-    <div class="field">
+<%= flash[:message] %>
+<%= form_for @employee do |f| %>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
-    </div>
-
-    <div class="field">
+    <br>
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
-    </div>
-
-    <div class="field">
+    <br>
     <%= f.label :alias %>
     <%= f.text_field :alias %>
-    </div>
-
-    <div class="field">
+    <br>
     <%= f.label :title %>
     <%= f.text_field :title %>
-    </div>
-
-    <div class="field">
+    <br>
     <%= f.label :office %>
     <%= f.text_field :office %>
-    </div>
-
-    <div class="field">
+    <br>
     <%= f.label :img_url %>
     <%= f.text_field :img_url %>
-    </div>
-
-    <div class="field">
+    <br>
     <%= f.label :dog_id %>
-    <%= f.collection_select :dog_id, Dog.all, :id, :name %>
-    </div>
-
-    <div class="actions">
-    <%= f.submit "Create Employee" %>
-    </div>
+    <%= f.collection_select :dog_id, Dog.all, :id, :name, include_blank: 'Please Select' %>
+    <br>
+    <%= f.submit %>
 <% end %>

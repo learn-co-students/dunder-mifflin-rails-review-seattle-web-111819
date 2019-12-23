@@ -16,5 +16,5 @@
 <h3>Dogs:</h3>
 <p><%= @employee.dog.name %></p>
 
-<p><%= link_to "DESTROY", employee_path(@employee), method: :delete %></p>
-<p><%= link_to "EDIT", edit_employee_path(@employee) %></p>
+<p><%= button_to "DESTROY", employee_path(@employee), method: :delete %></p>
+<p><%= button_to "EDIT", edit_employee_path(@employee), method: :get %></p>
