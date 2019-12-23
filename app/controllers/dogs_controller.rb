@@ -3,8 +3,8 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
-    # @sorted_dogs= Dog.sorted_dogs.reverse!
-    # Sort dogs by descending order
+    @sorted_dogs= Dog.sorted_dogs.reverse!
+    # Sort dogs with number of owners by descending order
   end
 
   def new
@@ -33,7 +33,7 @@ class DogsController < ApplicationController
     # find_dog  #find dog by id
 
     if @dog.update(dog_params)
-      redirect_to @dog
+      redirect_to @dog    #dog_path
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class DogsController < ApplicationController
   def destroy
     # find_dog
     @dog.destroy
-    redirect_to dog_path
+    redirect_to dogs_path
   end
 
   private
