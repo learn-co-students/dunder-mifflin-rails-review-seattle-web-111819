@@ -1,0 +1,17 @@
+<h1> Dog Info: </h1>
+<table >
+    <tr>
+        <th>Name: </th>
+        <th>Breed: </th>
+        <th>Age: </th>
+        <th>Employees: </th>
+    </tr>
+    <tr>
+        <td><%= @dog.name %></td>
+        <td><%= @dog.breed %></td>
+        <td><%= @dog.age %></td>
+        <% @dog.employees.each do |emp| %>
+        <td><%= emp.first_name %></td>
+        <% end %>
+    </tr>
+</table>
