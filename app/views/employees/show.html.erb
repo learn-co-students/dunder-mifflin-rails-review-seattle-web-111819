@@ -1,0 +1,20 @@
+<h1> Employee Info: </h1>
+ <img src= <%=@employee.img_url%> width="200">
+<table >
+    <tr>
+        <th>Name: </th>
+        <th>AKA: </th>
+        <th>Job Title: </th>
+        <th>Office: </th>
+        <th>Dog ID#: </th>              
+    </tr>
+    <tr align="center">
+        <td><%= @employee.first_name + " " + @employee.last_name %></td>
+        <td><%= @employee.alias %></td>
+        <td><%= @employee.title %></td>
+        <td><%= @employee.office %></td>
+        <td><%= @employee.dog_id %></td>
+    </tr>
+</table>
+       
+        
